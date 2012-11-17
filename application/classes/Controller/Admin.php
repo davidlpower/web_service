@@ -12,7 +12,7 @@ class Controller_Admin extends Controller {
         $head = '<title>ARDUINO LOGGER</title>';
         $body = 'Temperature: ' . $temperature . ' Humidity: ' . $humidity;
         
-        $data = Model_Webservice::get_all_devices();
+        $data = Model_Webmodel::get_all_devices();
         
         $this->response->body("<html><head>" . $head . "</head><body>" . $body . "</body></html>");
     }
