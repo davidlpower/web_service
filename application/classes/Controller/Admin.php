@@ -12,7 +12,8 @@ class Controller_Admin extends Controller {
         $head = '<title>ARDUINO LOGGER</title>';
         $body = 'Temperature: ' . $temperature . ' Humidity: ' . $humidity;
         
-        $service = new Model_Webmodel();
+        $service = Model::factory('Webservice');
+        // $service = new Model_Webmodel();
         
         $data = $service->getDevices();
         
