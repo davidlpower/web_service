@@ -11,7 +11,9 @@ class Controller_Admin extends Controller {
 
         $head = '<title>ARDUINO LOGGER</title>';
         $body = 'Temperature: ' . $temperature . ' Humidity: ' . $humidity;
-
+        
+        $webservice_model = new Model_Webservice;
+        $webservice_model->get_all_devices();
         $this->response->body("<html><head>" . $head . "</head><body>" . $body . "</body></html>");
     }
 
