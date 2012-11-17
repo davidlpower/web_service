@@ -2,9 +2,9 @@
 
 defined('SYSPATH') or die('No direct script access.');
 
-class Model_Webservice extends Model_Database {
+class Model_Webservice extends Model {
 
-    public function get_all_devices() {
+    public static function get_all_devices() {
 
         $results = DB::select()
                 ->from('webservice_devices')
