@@ -2,7 +2,7 @@
 
 defined('SYSPATH') or die('No direct script access.');
 
-class Model_Webmodel extends Model_Database {
+class Model_Webmodel extends ORM {
 
     public static function get_all_devices() {
 
