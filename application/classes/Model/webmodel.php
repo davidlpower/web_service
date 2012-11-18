@@ -23,7 +23,52 @@ class Model_Webmodel extends Model {
             return FALSE;
         }
     }
+    
+    // Returns the hourly average 
+    public function getHourAverage(){
+        
+                $results = DB::select()
+                ->from('view_hourly_average')
+                ->execute()
+                ->as_array();
+                
+                return $results;
+    }
+    
+    // Returns the daily average 
+    public function getDailyAverage(){
+        
+                $results = DB::select()
+                ->from('view_daily_average')
+                ->execute()
+                ->as_array();
+                
+                return $results;
+    }
+    
+    // Returns the current reading
+    public function getCurrent(){
+        
+                $results = DB::select()
+                ->from('view_current_data')
+                ->execute()
+                ->as_array();
+                
+                return $results;
+    }
 
+    // Returns the current reading
+    public function getOverallAverage(){
+        
+                $results = DB::select()
+                ->from('view_overall_average')
+                ->execute()
+                ->as_array();
+                
+                return $results;
+    }
+
+    // Save data to database
     public static function save($temp,$humid) {
 
         $results = DB::insert('webservice_temperature', array('date', 'temperature', 'humidity'))
