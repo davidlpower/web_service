@@ -11,13 +11,14 @@ class Model_Webmodel extends Model {
                 ->where('device_id', '=', $device_id)
                 ->and_where('allowed', '=', 1)
                 ->and_where('deleted', '=', 0)
-                ->execute();
+                ->execute()
+                ->as_array();
         
         echo '<PRE>';
-        print_r($results->as_array());
+        print_r($results);
         echo '</PRE>';
         
-        if($results) 
+        if(!empty($results))
         {
             return TRUE;
         }

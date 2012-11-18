@@ -31,19 +31,6 @@ class Controller_Admin extends Controller {
         $this->response->body("<html><head>" . $head . "</head><body>" . $body . "</body></html>");
     }
 
-    public function action_save() {
-
-        $temperature = $this->request->query('temperature');
-        $humidity = $this->request->query('humidity');
-        $device = $this->request->query('device');
-
-        $service = new Model_Webmodel();
-
-        $data = $service->getDevice('168CC2CDE1926121FDB78164D5B237C626E33121DC08B048C37B2BE5DFF4B8F1');
-
-        $this->response->body(1);
-    }
-
 }
 
 // End Admin
