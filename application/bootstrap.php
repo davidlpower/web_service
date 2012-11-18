@@ -128,3 +128,9 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
             'controller' => 'admin',
             'action' => 'index',
         ));
+
+Route::set('graph', '(<controller>(/<action>(/<id>)))')
+        ->defaults(array(
+            'controller' => 'graph',
+            'action' => 'index',
+        ));

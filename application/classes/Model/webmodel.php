@@ -14,10 +14,6 @@ class Model_Webmodel extends Model {
                 ->execute()
                 ->as_array();
         
-        echo '<PRE>';
-        print_r($results);
-        echo '</PRE>';
-        
         if(!empty($results))
         {
             return TRUE;
