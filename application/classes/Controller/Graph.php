@@ -6,7 +6,6 @@ class Controller_Graph extends Controller {
 
     public function action_index() {
 
-
         $head = "<title>Arduino Temperature Logger</title>
             <title>
       Google Visualization API Sample
