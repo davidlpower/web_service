@@ -31,6 +31,7 @@ class Controller_Admin extends Controller {
         echo '<br /><br />';
         $this->response->body("<html><head>" . $head . "</head><body>" . $body . "</body></html>");
     }
+
 }
 
 // End Admin
