@@ -26,7 +26,7 @@ class Controller_Graph extends Controller {
         $view = View::factory('graph')
                 ->set('head', $head)
                 ->set('background', $background)
-                ->bind('barchart',$this->action_barchart());
+                ->set('barchart',$this->action_barchart());
         
 
         echo $view->render();
