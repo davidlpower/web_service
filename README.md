@@ -30,5 +30,3 @@ Sprint 2 - 24 November 2012
     - Calculate 10% decrease on this average $10decrease
     - If $10increase, light red LED and print to website
     - If $10decrease, light blue LED and print to website
-
-3. Remove 
