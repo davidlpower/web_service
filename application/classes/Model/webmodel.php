@@ -33,8 +33,11 @@ class Model_Webmodel extends Model {
                 ->from('view_hourly_average')
                 ->execute()
                 ->as_array();
-
-        return $results;
+        echo '<pre>';
+//        return $results;
+        print_r($results);
+        echo '</pre>';
+        die();
     }
 
     // Returns the daily average 
@@ -79,11 +82,16 @@ class Model_Webmodel extends Model {
 
         if (!empty($results))
         {
-            if($results[0]['percentage_difference'] > 10.00){
+            if ($results[0]['percentage_difference'] > 10.00)
+            {
                 return 'TRUE';
             }
+            elseif ($results[0]['percentage_difference'] < -10.00)
+            {
+                return 'FALSE';
+            }
         }
-        return 'FALSE';
+        return 'NULL';
     }
 
     // Save data to database

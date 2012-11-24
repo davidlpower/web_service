@@ -1,7 +1,5 @@
 <?php
 
-include 'vendor/phpgraphlib_v2/phpgraphlib.php';
-
 defined('SYSPATH') or die('No direct script access.');
 
 class Controller_Graph extends Controller {
@@ -13,33 +11,34 @@ class Controller_Graph extends Controller {
         // Get data from database
         $service = new Model_Webmodel();
         $result = $service->getPercentageDifference();
-
+        $temp = $service->getHourAverage();
+        die();
         if ($result == 'TRUE')
         {
             $background = 'style="background: #EE6363;"';
         }
+        elseif ($result == 'FALSE')
+        {
+            $background = 'style="background: #66CCCC;"';
+        }
         else
         {
-            $background = 'style="background: 66CCCC;"';
+            $background = 'style="background: #FFFFF1;"';
         }
 
         $view = View::factory('graph')
                 ->set('head', $head)
                 ->set('background', $background)
-                ->set('barchart',$this->action_barchart());
-        
+                ->set('barchart', $this->get_barchart($temp));
+
 
         echo $view->render();
     }
 
-    public function action_barchart() {
-        $this->auto_render = FALSE;
-        $graph = new PHPGraphLib(400, 300);
-        $data = array("Alex" => 99, "Mary" => 98, "Joan" => 70, "Ed" => 90);
-        $graph->addData($data);
-        $graph->setTitle("Test Scores");
-        $graph->setTextColor("blue");
-        $graph->createGraph();
+    public function get_barchart($data) {
+        $view = View::factory('graph')
+                ->set('$temp', $head);
+        echo $view->render();
     }
 
 }

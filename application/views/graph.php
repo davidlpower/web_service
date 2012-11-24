@@ -1,6 +1,10 @@
+<?php
+$data = null;
+foreach ($temp as $key => $value) {
+    $data[] = $value;
+}
+?>
 <html>
-    <head><?php echo $head;?></head>
-    <body <?php echo $background;?>>
-        <img src="<?=$barchart?>" />
-    </body>
-</html>  
+    <h3>This is where I want to display my graph</h3>
+    <img src="graph_bar.php?mydata=<?php echo urlencode(serialize($data)); ?>" />
+</html>
