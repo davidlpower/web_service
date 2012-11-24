@@ -5,6 +5,7 @@ defined('SYSPATH') or die('No direct script access.');
 class Model_Webmodel extends Model {
 
     public static $view1 = "view_percentage_difference";
+    public static $view2 = "view_day_breakdown";
 
     public function getDevice($device_id) {
 
@@ -33,11 +34,8 @@ class Model_Webmodel extends Model {
                 ->from('view_hourly_average')
                 ->execute()
                 ->as_array();
-        echo '<pre>';
-//        return $results;
-        print_r($results);
-        echo '</pre>';
-        die();
+
+        return $results;
     }
 
     // Returns the daily average 
@@ -48,6 +46,15 @@ class Model_Webmodel extends Model {
                 ->execute()
                 ->as_array();
 
+        return $results;
+    }
+
+    // Return hours of day
+    public function getBreakdown() {
+        $results = DB::select()
+                ->from(self::$view2)
+                ->execute()
+                ->as_array();
         return $results;
     }
 

@@ -11,8 +11,12 @@ class Controller_Graph extends Controller {
         // Get data from database
         $service = new Model_Webmodel();
         $result = $service->getPercentageDifference();
-        $temp = $service->getHourAverage();
+        $temp = $service->getBreakdown();
+        echo '<PRE>';
+        print_r($temp);
+        echo '</PRE>';
         die();
+        
         if ($result == 'TRUE')
         {
             $background = 'style="background: #EE6363;"';
@@ -37,7 +41,7 @@ class Controller_Graph extends Controller {
 
     public function get_barchart($data) {
         $view = View::factory('graph')
-                ->set('$temp', $head);
+                ->set('data', $data);
         echo $view->render();
     }
 
