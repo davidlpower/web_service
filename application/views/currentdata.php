@@ -13,15 +13,19 @@
             function drawVisualization() {
                 // Create and populate the data table.
                 var data = google.visualization.arrayToDataTable([
-                    ['Date-Time', 'Current Temperature', 'Average Temperature'],
-                    [<?= @$date; ?>,  <?= @$current; ?>,    <?= @$average; ?>]
+                    ['Date-Time', 'Lowest Temperature', 'Higest Temperature'],
+                    <?php 
+                    foreach($graph_data as $key => $day){
+                        echo '['.$day['date'].','.$day['Lowest_Temp'].','.$day['Higest_Temp'].'],';
+                    }
+                    ?>
                 ]);
       
                 // Create and draw the visualization.
                 new google.visualization.BarChart(document.getElementById('visualization')).
                     draw(data,
                 {title:"Sitting Room Environmental Data", 
-                    width:640, height:480, vAxis: {title: "Date"}, hAxis: {title: "Data"}}
+                    width:640, height:480, vAxis: {title: "Date"}, hAxis: {title: "Temperature"}}
             );
             }
       
