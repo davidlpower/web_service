@@ -12,10 +12,6 @@ class Controller_Graph extends Controller {
         $service = new Model_Webmodel();
         $result = $service->getPercentageDifference();
         $temp = $service->getBreakdown();
-        echo '<PRE>';
-        print_r($temp);
-        echo '</PRE>';
-        die();
         
         if ($result == 'TRUE')
         {

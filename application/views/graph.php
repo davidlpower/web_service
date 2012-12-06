@@ -1,7 +1,7 @@
 <?php
 $data = null;
 foreach ($temp as $key => $value) {
-    $data[] = $value;
+    $data[$value['Average_Temp']] = $value['date'];
 }
 ?>
 <html>
