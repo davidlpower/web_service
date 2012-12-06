@@ -45,9 +45,11 @@ class Model_Webmodel extends Model {
                 ->from('view_day_hourly_average')
                 ->execute()
                 ->as_array();
+        
         echo '<pre>';
         print_r($results);
         echo '</pre>';
+        die;
         return $results;
     }
 
