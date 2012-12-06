@@ -16,6 +16,7 @@
                     ['Date-Time', 'Lowest Temperature', 'Higest Temperature'],
                     <?php 
                     foreach($graph_data as $key => $day){
+                        echo $key .' '. sizeof($graph_data);
                         if($key < sizeof($graph_data)){
                           echo '['.$day['date'].','.$day['Lowest_Temp'].','.$day['Higest_Temp'].'],';  
                         }else{
