@@ -42,7 +42,7 @@ class Model_Webmodel extends Model {
     public function getDailyAverage() {
 
         $results = DB::select()
-                ->from('view_daily_average')
+                ->from('view_day_hourly_average')
                 ->execute()
                 ->as_array();
 
