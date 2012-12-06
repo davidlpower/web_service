@@ -12,7 +12,7 @@ class Controller_Graph extends Controller {
         $service = new Model_Webmodel();
         $result = $service->getPercentageDifference();
         $temp = $service->getBreakdown();
-        
+
         if ($result == 'TRUE')
         {
             $background = 'style="background: #EE6363;"';
@@ -38,6 +38,12 @@ class Controller_Graph extends Controller {
     public function get_barchart($data) {
         $view = View::factory('graph')
                 ->set('data', $data);
+        echo $view->render();
+    }
+
+    public function action_currentdata() {
+        $view = View::factory('currentdata')
+                ->set('graph_data', array('title'=>'Current Sitting Room Data'));
         echo $view->render();
     }
 
