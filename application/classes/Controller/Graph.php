@@ -44,12 +44,10 @@ class Controller_Graph extends Controller {
     public function action_currentdata() {
         $db_model = new Model_Webmodel();
         $data = $db_model->getBreakdown();
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
-        die;
+
         $view = View::factory('currentdata')
                 ->set('graph_data', $data);
+        
         echo $view->render();
     }
 
