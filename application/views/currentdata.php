@@ -30,7 +30,7 @@
                 new google.visualization.BarChart(document.getElementById('visualization')).
                     draw(data,
                 {title:"Sitting Room Environmental Data", 
-                    width:640, height:480, vAxis: {title: "Date"}, hAxis: {title: "Temperature"}}
+                    width:860, height:700, vAxis: {title: "Date"}, hAxis: {title: "Temperature"}}
             );
             }
       
@@ -40,7 +40,7 @@
     <body style="font-family: Arial;border: 0 none;">
         <div id="container" style="width: 900px; margin: 0 auto;">
             <div id="table_title"><h1>Current Sitting Room Data</h1></div>
-            <div id="visualization" style="width: 640px; height: 480px;"></div>
+            <div id="visualization" style="width: 860px; height: 700px;"></div>
         </div>
     </body>
 </html>
