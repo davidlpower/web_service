@@ -69,7 +69,7 @@ class Model_Webmodel extends Model {
         return $results;
     }
 
-    // Return days of week
+    // Return weeks of month
     public function getMonthlyBreakdown() {
         $results = DB::select()
                 ->from(self::$view4)
