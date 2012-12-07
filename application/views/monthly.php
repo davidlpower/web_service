@@ -39,7 +39,7 @@
     </head>
     <body style="font-family: Arial;border: 0 none;">
         <div id="container" style="width: 900px; margin: 0 auto;">
-            <div id="table_title"><h1>Weekly Breakdown</h1></div>
+            <div id="table_title"><h1>Sitting Room - Monthly Breakdown</h1></div>
             <div id="visualization" style="width: 860px; height: 700px;"></div>
         </div>
     </body>
