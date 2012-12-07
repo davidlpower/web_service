@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <title>
-            Current Sitting Room Data
+            Weekly Breakdown
         </title>
         <script type="text/javascript" src="http://www.google.com/jsapi"></script>
         <script type="text/javascript">
@@ -39,7 +39,7 @@
     </head>
     <body style="font-family: Arial;border: 0 none;">
         <div id="container" style="width: 900px; margin: 0 auto;">
-            <div id="table_title"><h1>Current Sitting Room Data</h1></div>
+            <div id="table_title"><h1>Sitting Room - Weekly Breakdown</h1></div>
             <div id="visualization" style="width: 860px; height: 700px;"></div>
         </div>
     </body>

@@ -6,24 +6,40 @@ class Controller_Graph extends Controller {
 
     public function action_index() {
 
-        $view = View::factory('graph');
+        $view = View::factory('graphs');
         echo $view->render();
-    }
+    }   
 
-    public function get_barchart($data) {
-        $view = View::factory('graph')
-                ->set('data', $data);
-        echo $view->render();
-    }
-
-    public function action_currentdata() {
+    // Daily
+    public function action_daily() {
         $db_model = new Model_Webmodel();
         $data = $db_model->getBreakdown();
 
-        $view = View::factory('currentdata')
+        $view = View::factory('daily')
                 ->set('graph_data', $data);
         
         echo $view->render();
     }
 
+    // Weekly
+    public function action_weekly() {
+        $db_model = new Model_Webmodel();
+        $data = $db_model->getBreakdown();
+
+        $view = View::factory('weekly')
+                ->set('graph_data', $data);
+        
+        echo $view->render();
+    }
+    
+    // Monthly
+    public function action_monthly() {
+        $db_model = new Model_Webmodel();
+        $data = $db_model->getBreakdown();
+
+        $view = View::factory('monthly')
+                ->set('graph_data', $data);
+        
+        echo $view->render();
+    }
 }
