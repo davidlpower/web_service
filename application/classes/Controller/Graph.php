@@ -50,12 +50,14 @@ class Controller_Graph extends Controller {
             $time = explode(':', $date_time[1]);
             $row_data .= 'new Date(';
 
-            // save the date values
-            foreach ($date as $value_1) {
-                $row_data .= $value_1;
-                $row_data .= ', ';
-            }
+//            // save the date values
+//            foreach ($date as $value_1) {
+//                $row_data .= $value_1;
+//                $row_data .= ', ';
+//            }
 
+            $row_data = $date[0] . ', ' . $date[2] . ' ,' . $date[1] . ' ,';
+            
             $counter = 3;
             // save the time values
             foreach ($time as $value_2) {
