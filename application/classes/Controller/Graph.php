@@ -137,8 +137,6 @@ class Controller_Graph extends Controller {
             }
             $outer_counter--;
         }
-        echo'</pre>';
-        die();
         return $row_data;
     }
 
