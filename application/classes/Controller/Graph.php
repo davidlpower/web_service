@@ -25,9 +25,9 @@ class Controller_Graph extends Controller {
     public function action_record() {
         $db_model = new Model_Webmodel();
         $data = $db_model->getRecord();
-
+        print_r($data);
         $view = View::factory('record')
-                ->set('graph_data', $data);
+                ->set('records', $data);
         
         echo $view->render();
     }
