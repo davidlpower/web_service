@@ -56,6 +56,8 @@ class Controller_Graph extends Controller {
 //                $row_data .= ', ';
 //            }
 
+            print_r($date);
+            die;
             $row_data = $date[0] . ', ' . $date[2] . ' ,' . $date[1] . ' ,';
             
             $counter = 3;
