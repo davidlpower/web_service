@@ -34,8 +34,8 @@
         <div id="container" style="width: 950px; margin: 0 auto;">
             <div id="table_title"><h1>Room Occupancy - Records</h1></div>
             <div id="home"><a href="/graph"><i>back to list</i></a></div>
+            <img id="loading" src="<?php echo '/assets/loading.gif'; ?>">
             <br />
-            <img id="loading" src="<?php echo '/assets/loading.gif'; ?>" alt="Loading Image">
             <div id="visualization" style="width: 850px; height: 450px;"></div>
         </div>
     </body>
@@ -43,5 +43,6 @@
 </html>
 
 <script>
-    $('#loading').fadeOut(5000);
+    // Fade the image out
+    $('#loading').fadeOut(2500);
 </script>

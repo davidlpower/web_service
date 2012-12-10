@@ -92,5 +92,5 @@ class Controller_Graph extends Controller {
 
         echo $view->render();
     }
-
+    
 }
