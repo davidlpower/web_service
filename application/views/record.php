@@ -3,6 +3,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>Room Occupancy Temperature</title>
+        <script type="text/javascript" src="<?php echo '/assets/jquery-1.8.3.js'; ?>"></script>
         <script type="text/javascript" src="http://www.google.com/jsapi"></script>
         <script type="text/javascript">
             google.load('visualization', '1', {packages: ['annotatedtimeline']});
@@ -34,8 +35,13 @@
             <div id="table_title"><h1>Room Occupancy - Records</h1></div>
             <div id="home"><a href="/graph"><i>back to list</i></a></div>
             <br />
-            <div id="visualization" style="width: 850px; height: 450px;"><img src="<?php echo '/assets/loading.gif'; ?>" alt="Loading Image"></div>
+            <img id="loading" src="<?php echo '/assets/loading.gif'; ?>" alt="Loading Image">
+            <div id="visualization" style="width: 850px; height: 450px;"></div>
         </div>
     </body>
 
 </html>
+
+<script>
+    $('#loading').fadeOut(5000);
+</script>
