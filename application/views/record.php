@@ -34,7 +34,7 @@
             <div id="table_title"><h1>Room Occupancy - Records</h1></div>
             <div id="home"><a href="/graph"><i>back to list</i></a></div>
             <br />
-            <div id="visualization" style="width: 800px; height: 400px;"></div>
+            <div id="visualization" style="width: 800px; height: 400px;"><img src="/assets/loading.gif"></div>
         </div>
     </body>
 
