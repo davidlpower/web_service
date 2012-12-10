@@ -17,14 +17,14 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
                 data.addColumn('number', 'Temperture');
                 data.addColumn('number', 'Humidity');
                 data.addRows([
-                    [new Date(2008, 1 ,1 ,12 ,31 ,10), 10, 30],
-                    [new Date(2008, 1 ,1 ,12 ,32 ,15), 20, 25],
-                    [new Date(2008, 1 ,1 ,12 ,33 ,55), 30, 21],
-                    [new Date(2008, 1 ,1 ,12 ,34 ,05), 10, 22],
-                    [new Date(2008, 1 ,1 ,12 ,34 ,55), 07, 33],
-                    [new Date(2008, 1 ,1 ,12 ,35 ,42), 08, 33],
-                    [new Date(2008, 1 ,1 ,12 ,36 ,15), 09, 30],
-                    [new Date(2008, 1 ,1 ,12 ,37 ,00), 10, 29],
+                    [new Date(2012, 1 ,1 ,12 ,31 ,10), 10, 30],
+                    [new Date(2012, 1 ,1 ,12 ,32 ,15), 20, 25],
+                    [new Date(2012, 1 ,1 ,12 ,33 ,55), 30, 21],
+                    [new Date(2012, 1 ,1 ,12 ,34 ,05), 10, 22],
+                    [new Date(2012, 1 ,1 ,12 ,34 ,55), 07, 33],
+                    [new Date(2012, 1 ,1 ,12 ,35 ,42), 08, 33],
+                    [new Date(2012, 1 ,1 ,12 ,36 ,15), 09, 30],
+                    [new Date(2012, 1 ,1 ,12 ,37 ,00), 10, 29],
                 ]);
     
                 var annotatedtimeline = new google.visualization.AnnotatedTimeLine(

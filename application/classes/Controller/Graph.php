@@ -21,12 +21,12 @@ class Controller_Graph extends Controller {
         echo $view->render();
     }
 
-    // Daily 2
-    public function action_daily2() {
+    // All Records
+    public function action_record() {
         $db_model = new Model_Webmodel();
-        $data = $db_model->getDailyBreakdown();
+        $data = $db_model->getRecord();
 
-        $view = View::factory('daily_2')
+        $view = View::factory('record')
                 ->set('graph_data', $data);
         
         echo $view->render();

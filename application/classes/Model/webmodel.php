@@ -77,7 +77,17 @@ class Model_Webmodel extends Model {
                 ->as_array();
         return $results;
     }
+    
+    // Return all records
+    public function getRecord() {
+        $results = DB::select()
+                ->from(self::$view4)
+                ->execute()
+                ->as_array();
+        return $results;
+    }
 
+    
     // Returns the current reading
     public function getCurrent() {
 
