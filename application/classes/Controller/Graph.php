@@ -21,12 +21,9 @@ class Controller_Graph extends Controller {
         echo $view->render();
     }
 
-    // All Records
-    public function action_record() {
-        $db_model = new Model_Webmodel();
-        $data = $db_model->getRecord();
-
-        //[new Date(2012, 1 ,1 ,12 ,31 ,10), 10, 30],
+    // Create javascript data rows
+    public function create_jsData($data){
+        
         // Set a holder for the row data
         $row_data = '';
         $outer_counter = sizeof($data);
@@ -64,7 +61,17 @@ class Controller_Graph extends Controller {
             }
             $outer_counter--;
         }
+        return $row_data;
+    }
+    
+    // All Records
+    public function action_record() {
+        $db_model = new Model_Webmodel();
+        $data = $db_model->getRecord();
 
+        // Create javascript data rows
+        $row_data = $this->create_jsData($data);
+       
         $view = View::factory('record')
                 ->set('records', $row_data);
 
