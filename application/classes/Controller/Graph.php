@@ -31,7 +31,7 @@ class Controller_Graph extends Controller {
         echo '<pre>';
         foreach($data as $key => $value){
            $date_time = explode(' ', $value['date']);
-           print_r($date_timep);
+           print_r($date_time);
         }
         
         
