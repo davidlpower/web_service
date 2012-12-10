@@ -43,12 +43,14 @@ class Controller_Graph extends Controller {
             foreach ($date as $value_1) {
                 $row_data .= $value_1;
                 $row_data .= ',';
+                print_r($value_1);
             }
 
             // save the time values
             foreach ($time as $value_2) {
                 $row_data .= $value_2;
                 $row_data .= ', ';
+                print_r($value_2);
             }
 
             $row_data .= '),' . $value['temperature'] . ', ' . $value['humidity'] . ']';
