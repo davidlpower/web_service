@@ -21,14 +21,14 @@ class Controller_Graph extends Controller {
         echo $view->render();
     }
 
-        // All Records
+    // All Records
     public function action_dailyTimeLine() {
         $db_model = new Model_Webmodel();
         $data = $db_model->getDailyBreakdown();
 
         // Create javascript data rows
-        $row_data = $this->create_jsData($data);
-       
+        $row_data = $this->create_jsData($data, 'daily');
+
         $view = View::factory('daily_timeline')
                 ->set('records', $row_data);
 
@@ -36,8 +36,8 @@ class Controller_Graph extends Controller {
     }
 
     // Create javascript data rows
-    public function create_jsData($data){
-        
+    public function create_jsData($data, $mode = 'record') {
+
         // Set a holder for the row data
         $row_data = '';
         $outer_counter = sizeof($data);
@@ -67,25 +67,38 @@ class Controller_Graph extends Controller {
                 $counter--;
             }
 
-            $row_data .= '), ' . $value['temperature'] . ', ' . $value['humidity'] . ']';
+            // Pick the right table col names
+            if ($mode == 'record')
+            {
+                $row_data .= '), ' . $value['temperature'] . ', ' . $value['humidity'] . ']';
+            }
+            else if ($mode == 'daily')
+            {
+                $row_data .= '), ' . $value['average_temp'] . ', ' . $value['average_hum'] . ']';
+            }
+            else
+            {
+                $row_data .= '), ' . $value[''] . ', ' . $value[''] . ']';
+            }
 
             // Not needed at the end
-            if($outer_counter > 1) {
+            if ($outer_counter > 1)
+            {
                 $row_data .= ',';
             }
             $outer_counter--;
         }
         return $row_data;
     }
-    
+
     // All Records
     public function action_record() {
         $db_model = new Model_Webmodel();
         $data = $db_model->getRecord();
 
         // Create javascript data rows
-        $row_data = $this->create_jsData($data);
-       
+        $row_data = $this->create_jsData($data, 'record');
+
         $view = View::factory('record')
                 ->set('records', $row_data);
 
@@ -113,5 +126,5 @@ class Controller_Graph extends Controller {
 
         echo $view->render();
     }
-    
+
 }
