@@ -43,6 +43,9 @@
 </html>
 
 <script>
+    $('#visualization').hide();
     // Fade the image out
-    $('#loading').fadeOut(900);
+    $('#loading').fadeOut(900, function(){
+        $('#visualization').show();
+    });
 </script>
