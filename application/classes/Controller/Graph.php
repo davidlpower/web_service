@@ -48,7 +48,7 @@ class Controller_Graph extends Controller {
             // save the time values
             foreach ($time as $value_2) {
                 $row_data .= $value_2;
-                if ($counter > 0)
+                if ($counter > 1)
                 {
                     $row_data .= ', ';
                 }
