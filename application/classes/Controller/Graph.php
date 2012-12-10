@@ -101,9 +101,6 @@ class Controller_Graph extends Controller {
         // Set a holder for the row data
         $row_data = '';
         $outer_counter = sizeof($data);
-        echo '<PRE>';
-        print_r($data);
-        echo '<PRE>';
         foreach ($data as $key => $value) {
 
             $row_data .= '[';
