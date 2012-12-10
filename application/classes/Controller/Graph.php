@@ -42,7 +42,7 @@ class Controller_Graph extends Controller {
             // save the date values
             foreach ($date as $value_1) {
                 $row_data .= $value_1;
-                $row_data .= ',';
+                $row_data .= ', ';
             }
 
             // save the time values
@@ -51,7 +51,7 @@ class Controller_Graph extends Controller {
                 $row_data .= ', ';
             }
 
-            $row_data .= '),' . $value['temperature'] . ', ' . $value['humidity'] . ']';
+            $row_data .= '), ' . $value['temperature'] . ', ' . $value['humidity'] . ']';
             
             // Not needed at the end
             $row_data .= ',';
