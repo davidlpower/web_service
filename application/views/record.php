@@ -36,7 +36,7 @@
             <div id="home"><a href="/graph"><i>back to list</i></a></div>
             <img id="loading" src="<?php echo '/assets/loading.gif'; ?>">
             <br />
-            <div id="visualization" style="width: 850px; height: 450px;"></div>
+            <div id="visualization" style="width: 850px; height: 450px;" style="visibility: hidden"></div>
         </div>
     </body>
 
@@ -44,5 +44,7 @@
 
 <script>
     // Fade the image out
-    $('#loading').fadeOut(6050);
+    $('#loading').fadeOut(6500, function(){
+        $('#visualization').fadeIn(1000);
+    });
 </script>
