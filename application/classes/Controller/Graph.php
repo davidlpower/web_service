@@ -21,6 +21,20 @@ class Controller_Graph extends Controller {
         echo $view->render();
     }
 
+        // All Records
+    public function action_dailyTimeLine() {
+        $db_model = new Model_Webmodel();
+        $data = $db_model->getDailyBreakdown();
+
+        // Create javascript data rows
+        $row_data = $this->create_jsData($data);
+       
+        $view = View::factory('daily_timeline')
+                ->set('records', $row_data);
+
+        echo $view->render();
+    }
+
     // Create javascript data rows
     public function create_jsData($data){
         

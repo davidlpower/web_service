@@ -11,7 +11,7 @@
             <div id="table_title"><h1>List of Graphs</h1></div>
             <ul>
                 <li><a href="/graph/record">Full Record</a></li>
-                <li><a href="/graph/daily">Daily Breakdown</a></li>
+                <li>Daily Breakdown <a href="/graph/daily">Bar</a> | <a href="/graph/dailyTimeLine">Time Line</a></li>
                 <li><a href="/graph/weekly">Weekly Breakdown</a></li>
                 <li><a href="/graph/monthly">Monthly Breakdown</a></li>
             </ul>
