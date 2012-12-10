@@ -19,7 +19,11 @@
     
                 var annotatedtimeline = new google.visualization.AnnotatedTimeLine(
                 document.getElementById('visualization'));
-                annotatedtimeline.draw(data, {'displayAnnotations': true});
+                annotatedtimeline.draw(data, {
+                    'displayAnnotations': true,
+                    'colors': ['blue', 'red'],
+                    'thickness': 2
+                });
             }
     
             google.setOnLoadCallback(drawVisualization);
@@ -29,6 +33,7 @@
         <div id="container" style="width: 850px; margin: 0 auto;">
             <div id="table_title"><h1>Room Occupancy - Records</h1></div>
             <div id="home"><a href="/graph"><i>back to list</i></a></div>
+            <br />
             <div id="visualization" style="width: 800px; height: 400px;"></div>
         </div>
     </body>

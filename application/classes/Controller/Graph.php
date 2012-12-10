@@ -65,11 +65,6 @@ class Controller_Graph extends Controller {
             $outer_counter--;
         }
 
-
-        echo '<pre>';
-        print_r($row_data);
-        echo '</pre>';
-
         $view = View::factory('record')
                 ->set('records', $row_data);
 
