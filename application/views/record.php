@@ -21,8 +21,8 @@
                 document.getElementById('visualization'));
                 annotatedtimeline.draw(data, {
                     'displayAnnotations': true,
-                    'colors': ['blue', 'red'],
-                    'thickness': 2
+                    'colors': ['red', 'blue', '#0000bb'],
+                    'thickness': 1
                 });
             }
     
