@@ -36,27 +36,25 @@ class Controller_Graph extends Controller {
 
             $date_time = explode(' ', $value['date']);
             $date = explode('-', $date_time[0]);
-            print_r($date);
             $time = explode(':', $date_time[1]);
-            print_r($time);
-//            $row_data .= 'new Date(';
-//
-//            // save the date values
-//            foreach ($date as $value_1) {
-//                $row_data .= $value_1;
-//                $row_data .= ',';
-//            }
-//
-//            // save the time values
-//            foreach ($time as $value_2) {
-//                $row_data .= $value_2;
-//                $row_data .= ', ';
-//            }
-//
-//            $row_data .= '),' . $value['temperature'] . ', ' . $value['humidity'] . ']';
-//            
-//            // Not needed at the end
-//            $row_data .= ',';
+            $row_data .= 'new Date(';
+            
+            // save the date values
+            foreach ($date as $value_1) {
+                $row_data .= $value_1;
+                $row_data .= ',';
+            }
+
+            // save the time values
+            foreach ($time as $value_2) {
+                $row_data .= $value_2;
+                $row_data .= ', ';
+            }
+
+            $row_data .= '),' . $value['temperature'] . ', ' . $value['humidity'] . ']';
+            
+            // Not needed at the end
+            $row_data .= ',';
         }
 
 
