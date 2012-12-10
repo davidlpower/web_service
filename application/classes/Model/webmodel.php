@@ -8,7 +8,8 @@ class Model_Webmodel extends Model {
     public static $view2 = "view_day_breakdown";
     public static $view3 = "view_week_breakdown";
     public static $view4 = "view_month_breakdown";
-    public static $record = "view_record";
+    // public static $record = "view_record";
+    public static $record = "view_record_new";
     
     public function getDevice($device_id) {
 
