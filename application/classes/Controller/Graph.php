@@ -114,7 +114,7 @@ class Controller_Graph extends Controller {
             $row_data .= $time[0] . ', ' . $time[1] . ', ';
 
             // save the date values
-            $row_data .= $date[0] . ', ' . $date[1] . ', ' . $date[2];
+            $row_data .= $date[2] . ', ' . $date[1] . ', ' . $date[0];
    
             // Pick the right table col names
             if ($mode == 'record')
@@ -137,9 +137,9 @@ class Controller_Graph extends Controller {
             }
             $outer_counter--;
         }
-        echo '<PRE>';
-        print_r($row_data);
-        echo '</PRE>';
+//        echo '<PRE>';
+//        print_r($row_data);
+//        echo '</PRE>';
         return $row_data;
     }
 
