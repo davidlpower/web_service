@@ -26,10 +26,10 @@ class Controller_Graph extends Controller {
         $db_model = new Model_Webmodel();
         $data = $db_model->getRecord();
 
+        echo 'Begin test <br />';
         //[new Date(2012, 1 ,1 ,12 ,31 ,10), 10, 30],
         // Set a holder for the row data
         $row_data = '';
-        echo '<pre>';
         foreach ($data as $key => $value) {
 
             $row_data .= '[';
