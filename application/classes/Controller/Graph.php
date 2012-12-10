@@ -74,7 +74,7 @@ class Controller_Graph extends Controller {
             }
             else if ($mode == 'daily')
             {
-                $row_data .= '), ' . $value['average_temp'] . ', ' . $value['average_hum'] . ']';
+                $row_data .= '), ' . $value['Average_Temp'] . ', ' . $value['Average_Hum'] . ']';
             }
             else
             {
