@@ -26,8 +26,17 @@ class Controller_Graph extends Controller {
         $db_model = new Model_Webmodel();
         $data = $db_model->getRecord();
         
+        // Set a holder for the row data
+        $row_data = null;
         echo '<pre>';
-        print_r($data);
+        foreach($data as $key => $value){
+           $date_time = explode(' ', $value);
+           print_r($date_timep);
+        }
+        
+        
+        // echo '<pre>';
+        // print_r($data);
         echo '</pre>';
         die;
         
