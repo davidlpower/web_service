@@ -112,6 +112,7 @@ class Controller_Graph extends Controller {
 
             
              $counter = 3;
+              echo'<pre>';
              print_r($time);
              
             // save the time values
@@ -154,6 +155,7 @@ class Controller_Graph extends Controller {
             }
             $outer_counter--;
         }
+        echo'</pre>';
         die();
         return $row_data;
     }
