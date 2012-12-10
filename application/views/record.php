@@ -44,5 +44,5 @@
 
 <script>
     // Fade the image out
-    $('#loading').fadeOut(4500);
+    $('#loading').fadeOut(6050);
 </script>
