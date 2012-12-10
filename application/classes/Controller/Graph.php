@@ -25,10 +25,11 @@ class Controller_Graph extends Controller {
     public function action_record() {
         $db_model = new Model_Webmodel();
         $data = $db_model->getRecord();
-        
+
         //[new Date(2012, 1 ,1 ,12 ,31 ,10), 10, 30],
         // Set a holder for the row data
         $row_data = '';
+        $outer_counter = sizeof($data);
         foreach ($data as $key => $value) {
 
             $row_data .= '[';
@@ -37,7 +38,7 @@ class Controller_Graph extends Controller {
             $date = explode('-', $date_time[0]);
             $time = explode(':', $date_time[1]);
             $row_data .= 'new Date(';
-            
+
             // save the date values
             foreach ($date as $value_1) {
                 $row_data .= $value_1;
@@ -56,16 +57,18 @@ class Controller_Graph extends Controller {
             }
 
             $row_data .= '), ' . $value['temperature'] . ', ' . $value['humidity'] . ']';
-            
+
             // Not needed at the end
-            $row_data .= ',';
+            if($outer_counter > 1) {
+                $row_data .= ',';
+            }
+            $outer_counter--;
         }
 
 
         echo '<pre>';
         print_r($row_data);
         echo '</pre>';
-        die;
 
         $view = View::factory('record')
                 ->set('records', $row_data);
