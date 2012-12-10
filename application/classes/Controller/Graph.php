@@ -25,8 +25,7 @@ class Controller_Graph extends Controller {
     public function action_record() {
         $db_model = new Model_Webmodel();
         $data = $db_model->getRecord();
-
-        echo 'Begin test <br />';
+        
         //[new Date(2012, 1 ,1 ,12 ,31 ,10), 10, 30],
         // Set a holder for the row data
         $row_data = '';
@@ -45,10 +44,15 @@ class Controller_Graph extends Controller {
                 $row_data .= ', ';
             }
 
+            $counter = 3;
             // save the time values
             foreach ($time as $value_2) {
                 $row_data .= $value_2;
-                $row_data .= ', ';
+                if ($counter > 0)
+                {
+                    $row_data .= ', ';
+                }
+                $counter--;
             }
 
             $row_data .= '), ' . $value['temperature'] . ', ' . $value['humidity'] . ']';
