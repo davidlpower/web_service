@@ -33,7 +33,7 @@
         <div id="container" style="width: 850px; margin: 0 auto;">
             <div id="table_title"><h1>Room Occupancy - Records</h1></div>
             <div id="home"><a href="/graph"><i>back to list</i></a></div>
-            loading: <img src="/assets/loading.gif" alt="Loading Image">
+            loading: <img src="/application/assets/loading.gif" alt="Loading Image">
             <br />
             <div id="visualization" style="width: 800px; height: 400px;"></div>
         </div>
