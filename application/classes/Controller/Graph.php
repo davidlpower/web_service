@@ -21,6 +21,18 @@ class Controller_Graph extends Controller {
         echo $view->render();
     }
 
+    // Daily 2
+    public function action_daily2() {
+        $db_model = new Model_Webmodel();
+        $data = $db_model->getDailyBreakdown();
+
+        $view = View::factory('daily_2')
+                ->set('graph_data', $data);
+        
+        echo $view->render();
+    }
+
+    
     // Weekly
     public function action_weekly() {
         $db_model = new Model_Webmodel();
