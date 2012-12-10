@@ -10,6 +10,7 @@
         <div id="container" style="width: 900px; margin: 0 auto;">
             <div id="table_title"><h1>List of Graphs</h1></div>
             <ul>
+                <li><a href="/graph/record">Full Record</a></li>
                 <li><a href="/graph/daily">Daily Breakdown</a></li>
                 <li><a href="/graph/weekly">Weekly Breakdown</a></li>
                 <li><a href="/graph/monthly">Monthly Breakdown</a></li>
