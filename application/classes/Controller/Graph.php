@@ -37,6 +37,64 @@ class Controller_Graph extends Controller {
 
     //'HH:mm MMMM dd, yyyy', 
     /*
+      // Create javascript data rows
+      public function create_jsData($data, $mode = 'record') {
+
+      // Set a holder for the row data
+      $row_data = '';
+      $outer_counter = sizeof($data);
+      foreach ($data as $key => $value) {
+
+      $row_data .= '[';
+
+      $date_time = explode(' ', $value['date']);
+      $date = explode('-', $date_time[0]);
+      $time = explode(':', $date_time[1]);
+      $row_data .= 'new Date(';
+
+      // save the date values
+      foreach ($date as $value_1) {
+      $row_data .= $value_1;
+      $row_data .= ', ';
+      }
+
+
+      $counter = 3;
+      // save the time values
+      foreach ($time as $value_2) {
+      $row_data .= $value_2;
+      if ($counter > 1)
+      {
+      $row_data .= ', ';
+      }
+      $counter--;
+      }
+
+      // Pick the right table col names
+      if ($mode == 'record')
+      {
+      $row_data .= '), ' . $value['temperature'] . ', ' . $value['humidity'] . ']';
+      }
+      else if ($mode == 'daily')
+      {
+      $row_data .= '), ' . $value['Average_Temp'] . ', ' . $value['Average_Hum'] . ']';
+      }
+      else
+      {
+      $row_data .= '), ' . $value[''] . ', ' . $value[''] . ']';
+      }
+
+      // Not needed at the end
+      if ($outer_counter > 1)
+      {
+      $row_data .= ',';
+      }
+      $outer_counter--;
+      }
+      return $row_data;
+      }
+     */
+
     // Create javascript data rows
     public function create_jsData($data, $mode = 'record') {
 
@@ -52,88 +110,12 @@ class Controller_Graph extends Controller {
             $time = explode(':', $date_time[1]);
             $row_data .= 'new Date(';
 
-            // save the date values
-            foreach ($date as $value_1) {
-                $row_data .= $value_1;
-                $row_data .= ', ';
-            }
-
-            
-            $counter = 3;
             // save the time values
-            foreach ($time as $value_2) {
-                $row_data .= $value_2;
-                if ($counter > 1)
-                {
-                    $row_data .= ', ';
-                }
-                $counter--;
-            }
+            $row_data .= $time[0] . ', ' . $time[1] . ', ';
 
-            // Pick the right table col names
-            if ($mode == 'record')
-            {
-                $row_data .= '), ' . $value['temperature'] . ', ' . $value['humidity'] . ']';
-            }
-            else if ($mode == 'daily')
-            {
-                $row_data .= '), ' . $value['Average_Temp'] . ', ' . $value['Average_Hum'] . ']';
-            }
-            else
-            {
-                $row_data .= '), ' . $value[''] . ', ' . $value[''] . ']';
-            }
-
-            // Not needed at the end
-            if ($outer_counter > 1)
-            {
-                $row_data .= ',';
-            }
-            $outer_counter--;
-        }
-        return $row_data;
-    }
-*/
-    
-    // Create javascript data rows
-    public function create_jsData($data, $mode = 'record') {
-
-        // Set a holder for the row data
-        $row_data = '';
-        $outer_counter = sizeof($data);
-        foreach ($data as $key => $value) {
-
-            $row_data .= '[';
-
-            $date_time = explode(' ', $value['date']);
-            $date = explode('-', $date_time[0]);
-            $time = explode(':', $date_time[1]);
-            $row_data .= 'new Date(';
-
-            
-             $counter = 3;
-              echo'<pre>';
-             print_r($time);
-             
-            // save the time values
-            foreach ($time as $value_2) {
-                $row_data .= $value_2;
-                if ($counter > 1)
-                {
-                    $row_data .= ', ';
-                }
-                $counter--;
-            }
-            
             // save the date values
-            foreach ($date as $value_1) {
-                $row_data .= $value_1;
-                $row_data .= ', ';
-            }
-
-            
-        
-
+            $row_data .= $date[0] . ', ' . $date[1] . ', ' . $date[2];
+   
             // Pick the right table col names
             if ($mode == 'record')
             {
@@ -160,7 +142,6 @@ class Controller_Graph extends Controller {
         return $row_data;
     }
 
-    
     // All Records
     public function action_record() {
         $db_model = new Model_Webmodel();
