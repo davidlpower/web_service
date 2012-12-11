@@ -27,7 +27,7 @@ class Controller_Graph extends Controller {
         $data = $db_model->getDayRecord();
 
         // Create javascript data rows
-        $row_data = $this->create_jsData($data, 'daily');
+        $row_data = $this->create_jsData($data, 'record');
 
         $view = View::factory('daily_timeline')
                 ->set('records', $row_data);
