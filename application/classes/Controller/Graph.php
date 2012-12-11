@@ -111,10 +111,10 @@ class Controller_Graph extends Controller {
             $row_data .= 'new Date(';
 
             //Date(2012, 0 , 1, 13, 50)
-            //Date(2011, 18, 02, 51)
+            //Date(2012, 11, 18, 02, 51)
              
             // save the date values
-            $row_data .= $date[0] . ', ' . $date[1] . ', ' . $date[2] . ', ';
+            $row_data .= $date[0] . ', ' . $date[1] - 1 . ', ' . $date[2] . ', ';
 
             // save the time values
             $row_data .= $time[0] . ', ' . $time[1];
