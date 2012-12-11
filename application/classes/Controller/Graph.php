@@ -79,10 +79,6 @@ class Controller_Graph extends Controller {
             }
             $outer_counter--;
         }
-        echo '<PRE>';
-        print_r($row_data);
-        echo '</PRE>';
-        return $row_data;
     }
 
     // All Records
