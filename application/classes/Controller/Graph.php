@@ -110,12 +110,13 @@ class Controller_Graph extends Controller {
             $time = explode(':', $date_time[1]);
             $row_data .= 'new Date(';
 
-            // save the time values
-            $row_data .= $time[0] . ', ' . $time[1] . ', ';
-
+            //Date(2012, 0 ,1, 13,50)
             // save the date values
-            $row_data .= $date[2] . ', ' . $date[1] . ', ' . $date[0];
-   
+            $row_data .= $date[0] . ', ' . $date[1] - 1 . ', ' . $date[2] . ', ';
+
+            // save the time values
+            $row_data .= $time[0] . ', ' . $time[1];
+
             // Pick the right table col names
             if ($mode == 'record')
             {
