@@ -9,6 +9,7 @@ class Model_Webmodel extends Model {
     public static $view3 = "view_week_breakdown";
     public static $view4 = "view_month_breakdown";
     public static $record = "view_record";
+    public static $day_record = "view_day_record";
     
     public function getDevice($device_id) {
 
@@ -88,6 +89,15 @@ class Model_Webmodel extends Model {
         return $results;
     }
 
+      
+    // Return all records
+    public function getDayRecord() {
+        $results = DB::select()
+                ->from(self::$day_record)
+                ->execute()
+                ->as_array();
+        return $results;
+    }
     
     // Returns the current reading
     public function getCurrent() {

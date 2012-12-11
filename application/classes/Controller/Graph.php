@@ -24,7 +24,7 @@ class Controller_Graph extends Controller {
     // All Records
     public function action_dailyTimeLine() {
         $db_model = new Model_Webmodel();
-        $data = $db_model->getDailyBreakdown();
+        $data = $db_model->getDayRecord();
 
         // Create javascript data rows
         $row_data = $this->create_jsData($data, 'daily');
