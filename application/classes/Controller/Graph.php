@@ -110,8 +110,6 @@ class Controller_Graph extends Controller {
             $time = explode(':', $date_time[1]);
             $row_data .= 'new Date(';
 
-            //Date(2012, 0 , 1, 13, 50)
-            //Date(2012, 11, 18, 02, 51)
              
             // save the date values
             $row_data .= $date[0] . ', ' . (($date[1])-1) . ', ' . $date[2] . ', ';
@@ -140,9 +138,6 @@ class Controller_Graph extends Controller {
             }
             $outer_counter--;
         }
-        echo '<PRE>';
-        print_r($row_data);
-        echo '</PRE>';
         return $row_data;
     }
 
