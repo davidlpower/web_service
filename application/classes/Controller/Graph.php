@@ -26,6 +26,9 @@ class Controller_Graph extends Controller {
         $db_model = new Model_Webmodel();
         $data = $db_model->getDayRecord();
 
+        echo '<PRE>';
+        print_r($data);
+        echo '</PRE>';
         // Create javascript data rows
         $row_data = $this->create_jsData($data, 'record');
 
