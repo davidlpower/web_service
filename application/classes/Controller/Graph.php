@@ -21,25 +21,7 @@ class Controller_Graph extends Controller {
         echo $view->render();
     }
 
-    // All Records
-    public function action_dailyTimeLine() {
-        $db_model = new Model_Webmodel();
-        $data = $db_model->getDayRecord();
-
-        echo '<PRE>';
-        print_r($data);
-        echo '</PRE>';
         // Create javascript data rows
-        $row_data = $this->create_jsData($data, 'record');
-
-        $view = View::factory('daily_timeline')
-                ->set('records', $row_data);
-
-        echo $view->render();
-    }
-
-    
-    // Create javascript data rows
     public function create_jsData($data, $mode = 'record') {
 
         // Set a holder for the row data
@@ -82,6 +64,22 @@ class Controller_Graph extends Controller {
             }
             $outer_counter--;
         }
+        return $row_data;
+    }
+
+    // All Records
+    public function action_dailyTimeLine() {
+        $db_model = new Model_Webmodel();
+        $data = $db_model->getDayRecord();
+
+
+        // Create javascript data rows
+        $row_data = $this->create_jsData($data);
+
+        $view = View::factory('daily_timeline')
+                ->set('records', $row_data);
+
+        echo $view->render();
     }
 
     // All Records
@@ -90,7 +88,7 @@ class Controller_Graph extends Controller {
         $data = $db_model->getRecord();
 
         // Create javascript data rows
-        $row_data = $this->create_jsData($data, 'record');
+        $row_data = $this->create_jsData($data);
 
         $view = View::factory('record')
                 ->set('records', $row_data);

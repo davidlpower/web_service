@@ -90,7 +90,7 @@ class Model_Webmodel extends Model {
     }
 
       
-    // Return all records
+    // Return day records
     public function getDayRecord() {
         $results = DB::select()
                 ->from(self::$day_record)
