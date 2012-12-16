@@ -31,9 +31,10 @@
 
 <script>
     $('#device').change(function() {
+        var device_id = $(this).val();
         $('body').each(function() {
             $(this).children('a').each(function(index) {
-                $(this).after("<span></span>");
+                $(this).after(device_id);
             });
         });
     });
