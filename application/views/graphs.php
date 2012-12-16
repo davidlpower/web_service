@@ -33,8 +33,6 @@
     $('#device').change(function() {
         var device_id = $(this).val();
         
-        str.slice(0, - 1);
-        
         $("a").each(function() {
             var _href = $(this).attr("href"); 
             var test = _href.slice(0, - 1);
