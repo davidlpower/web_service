@@ -5,6 +5,7 @@
         <title>
             Current Sitting Room Data
         </title>
+        <script type="text/javascript" src="<?php echo '/assets/jquery-1.8.3.js'; ?>"></script>
     </head>
     <body style="font-family: Arial;border: 0 none;">
         <div id="container" style="width: 900px; margin: 0 auto;">
@@ -18,11 +19,17 @@
             </select>
             
             <ul>
-                <li><a href="/graph/record">Full Record</a></li>
-                <li>Daily Breakdown <a href="/graph/daily">Bar</a> | <a href="/graph/dailyTimeLine">Time Line</a></li>
-                <li><a href="/graph/weekly">Weekly Breakdown</a></li>
-                <li><a href="/graph/monthly">Monthly Breakdown</a></li>
+                <li><a href="/graph/record/">Full Record</a></li>
+                <li>Daily Breakdown <a href="/graph/daily/">Bar</a> | <a href="/graph/dailyTimeLine/">Time Line</a></li>
+                <li><a href="/graph/weekly/">Weekly Breakdown</a></li>
+                <li><a href="/graph/monthly/">Monthly Breakdown</a></li>
             </ul>
         </div>
     </body>
 </html>
+
+<script>
+$('.device').change(function() {
+    console.log($('body a').val());
+});
+</script>
