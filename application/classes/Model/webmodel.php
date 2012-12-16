@@ -171,6 +171,8 @@ class Model_Webmodel extends Model {
     // Save data to database
     public static function save($temp, $humid, $device) {
 
+        print_r($temp);
+        
         $device = self::getDeviceByCode($device);
 
         DB::insert('webservice_temperature', array('device_id', 'date', 'temperature', 'humidity'))
