@@ -11,13 +11,13 @@
         <div id="container" style="width: 900px; margin: 0 auto;">
             <div id="table_title"><h1>List of Graphs</h1></div>
             Select Device: <select id="device" name="device">
-                <?php 
-                foreach($device as $key => $value){
-                    echo '<option value="'.$value['id'].'">'.$value['nickname'].'</option>';
+                <?php
+                foreach ($device as $key => $value) {
+                    echo '<option value="' . $value['id'] . '">' . $value['nickname'] . '</option>';
                 }
                 ?>
             </select>
-            
+
             <ul>
                 <li><a href="/graph/record/">Full Record</a></li>
                 <li>Daily Breakdown <a href="/graph/daily/">Bar</a> | <a href="/graph/dailyTimeLine/">Time Line</a></li>
@@ -26,12 +26,15 @@
             </ul>
         </div>
     </body>
-    <script>
-$('.device').change(function() {
-    var device_id = this.val();
-    $('body a').each(function(){
-        console.log(this)
-    })
-});
-</script>
+
 </html>
+
+<script>
+    $('.device').change(function() {
+        var device_id = this.val();
+        $('body a').each(function(){
+            console.log(this)
+        })
+    });
+
+</script>
