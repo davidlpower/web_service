@@ -30,14 +30,14 @@
 </html>
 
 <script>
-
-$(document).ready(function() {
-  initalise();
-});
+    
+    $(document).ready(function() {
+        initalise();
+    });
     
 
     function initalise(){
-        var device_id = $(this).val();
+        var device_id = $('#device').val();
         
         $('a').each(function() {
             var _href = $(this).attr("href"); 
