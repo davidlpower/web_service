@@ -30,13 +30,15 @@
 </html>
 
 <script>
-    $(document).ready(function () {
-        $('.device').change(function() {
+    
+
+        
+        $('#device').change(function() {
             var device_id = this.val();
             $('body a').each(function(){
                 console.log(this)
             })
         });
-    }
+    
 
 </script>
