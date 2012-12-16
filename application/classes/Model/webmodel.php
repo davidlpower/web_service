@@ -155,7 +155,8 @@ class Model_Webmodel extends Model {
         $value = DB::select('id')
                 ->from('webservice_devices')
                 ->where('device_id', '=', $deviceCode)
-                ->execute();
+                ->execute()
+                ->as_array();
 
         echo '<PRE>';
         print_r($value);
