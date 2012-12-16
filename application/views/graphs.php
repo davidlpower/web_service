@@ -42,8 +42,12 @@
               
             if($.isNumeric(test))
             {
-            _href = _href.slice(0, -1)
-            $(this).attr("href", _href + device_id);
+                _href = _href.slice(0, -1)
+                $(this).attr("href", _href + device_id);
+            }
+            else
+            {
+                $(this).attr("href", _href + device_id); 
             }
         });
 
