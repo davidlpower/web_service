@@ -172,9 +172,9 @@ class Model_Webmodel extends Model {
     public static function save($temp, $humid, $device) {
         
         $device = self::getDeviceByCode($device);
-
+        
         DB::insert('webservice_temperature', array('device_id', 'date', 'temperature', 'humidity'))
-                ->values(array(DB::expr($device, 'NOW()'), $temp, $humid))
+                ->values(array($device, DB::expr('NOW()'), $temp, $humid))
                 ->execute();
     }
 
