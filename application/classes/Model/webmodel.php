@@ -155,10 +155,11 @@ class Model_Webmodel extends Model {
         $value = DB::select('id')
                 ->from('webservice_devices')
                 ->where('device_id', '=', $deviceCode)
-                ->execute()
-                ->as_array();
+                ->execute();
 
+        echo '<PRE>';
         print_r($value);
+        echo '</PRE>';
         
         if (!empty($value) && isset($value[0]))
         {
