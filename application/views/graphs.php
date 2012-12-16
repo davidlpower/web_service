@@ -30,6 +30,7 @@
 </html>
 
 <script>
+    console.log('thjlsdfkjl');
     $('.device').change(function() {
         var device_id = this.val();
         $('body a').each(function(){
