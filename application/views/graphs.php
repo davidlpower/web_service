@@ -36,7 +36,7 @@
         $('a').each(function() {
             var _href = $(this).attr("href"); 
             var test = _href.slice(0, - 1);
-            console.log(test);
+            console.log(test[1]);
             console.log($.isNumeric(test));
             if($.isNumeric(test)){
             console.log('working...');
