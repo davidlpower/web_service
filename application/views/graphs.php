@@ -35,15 +35,20 @@
         
         $('a').each(function() {
             var _href = $(this).attr("href"); 
-            var test = _href.slice(0, - 1);
-            console.log(test[1]);
-            console.log($.isNumeric(test));
-            if($.isNumeric(test)){
+           
+            var test = _href.length;
+            
+            console.log(_href.substr(_href.length-1));
+            
+            if($.isNumeric(test))
+            {
+                
             console.log('working...');
+            
             _href = _href.slice(0, -1)
+            
             $(this).attr("href", _href + device_id);
-            }else{
-                console.log('not working....');
+            
             }
         });
 
