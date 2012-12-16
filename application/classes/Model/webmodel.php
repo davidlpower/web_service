@@ -159,9 +159,7 @@ class Model_Webmodel extends Model {
                 ->where('device_id', '=', $deviceCode)
                 ->execute()
                 ->as_array();
-        
-        print_r($value);
-        die;
+
         if (!empty($value) && isset($value[0]))
         {
             return $value[0];
