@@ -19,8 +19,9 @@ class Controller_Graph extends Controller {
     // Daily
     public function action_daily() {
         
+        $id = $this->request->param('id');
         $db_model = new Model_Webmodel();
-        $data = $db_model->getDailyBreakdown();
+        $data = $db_model->getDailyBreakdown($id);
 
         $view = View::factory('daily')
                 ->set('graph_data', $data);
@@ -76,8 +77,11 @@ class Controller_Graph extends Controller {
 
     // All Records
     public function action_dailyTimeLine() {
+        
+        $id = $this->request->param('id');
+        
         $db_model = new Model_Webmodel();
-        $data = $db_model->getDayRecord();
+        $data = $db_model->getDayRecord($id);
 
 
         // Create javascript data rows
@@ -91,8 +95,11 @@ class Controller_Graph extends Controller {
 
     // All Records
     public function action_record() {
+        
+        $id = $this->request->param('id');
+        
         $db_model = new Model_Webmodel();
-        $data = $db_model->getRecord();
+        $data = $db_model->getRecord($id);
 
         // Create javascript data rows
         $row_data = $this->create_jsData($data);
@@ -105,8 +112,11 @@ class Controller_Graph extends Controller {
 
     // Weekly
     public function action_weekly() {
+        
+        $id = $this->request->param('id');
+        
         $db_model = new Model_Webmodel();
-        $data = $db_model->getWeeklyBreakdown();
+        $data = $db_model->getWeeklyBreakdown($id);
 
         $view = View::factory('weekly')
                 ->set('graph_data', $data);
@@ -116,8 +126,11 @@ class Controller_Graph extends Controller {
 
     // Monthly
     public function action_monthly() {
+        
+        $id = $this->request->param('id');
+        
         $db_model = new Model_Webmodel();
-        $data = $db_model->getMonthlyBreakdown();
+        $data = $db_model->getMonthlyBreakdown($id);
 
         $view = View::factory('monthly')
                 ->set('graph_data', $data);

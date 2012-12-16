@@ -46,6 +46,7 @@ class Model_Webmodel extends Model {
 
         $results = DB::select()
                 ->from('view_hourly_average')
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
 
@@ -57,6 +58,7 @@ class Model_Webmodel extends Model {
 
         $results = DB::select()
                 ->from('view_day_hourly_average')
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
 
@@ -67,6 +69,7 @@ class Model_Webmodel extends Model {
     public function getDailyBreakdown($device_id) {
         $results = DB::select()
                 ->from(self::$view2)
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
         return $results;
@@ -76,6 +79,7 @@ class Model_Webmodel extends Model {
     public function getWeeklyBreakdown($device_id) {
         $results = DB::select()
                 ->from(self::$view3)
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
         return $results;
@@ -85,6 +89,7 @@ class Model_Webmodel extends Model {
     public function getMonthlyBreakdown($device_id) {
         $results = DB::select()
                 ->from(self::$view4)
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
         return $results;
@@ -94,6 +99,7 @@ class Model_Webmodel extends Model {
     public function getRecord($device_id) {
         $results = DB::select()
                 ->from(self::$record)
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
         return $results;
@@ -103,6 +109,7 @@ class Model_Webmodel extends Model {
     public function getDayRecord($device_id) {
         $results = DB::select()
                 ->from(self::$day_record)
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
         return $results;
@@ -113,6 +120,7 @@ class Model_Webmodel extends Model {
 
         $results = DB::select()
                 ->from('view_current_data')
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
 
@@ -124,6 +132,7 @@ class Model_Webmodel extends Model {
 
         $results = DB::select()
                 ->from('view_overall_average')
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
 
@@ -134,6 +143,7 @@ class Model_Webmodel extends Model {
     public function getPercentageDifference($device_id) {
         $results = DB::select('percentage_difference')
                 ->from(self::$view1)
+                ->where('device_id', '=', $device_id)
                 ->execute()
                 ->as_array();
 
