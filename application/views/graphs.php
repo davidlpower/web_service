@@ -32,10 +32,11 @@
 <script>
     $('#device').change(function() {
         var device_id = $(this).val();
-        $('body').each(function() {
-            $(this).children('a').each(function(index) {
-                $(this).after(device_id);
-            });
+        
+        $("a").each(function() {
+            var _href = $(this).attr("href"); 
+            $(this).attr("href", _href + device_id);
         });
+
     });
 </script>
