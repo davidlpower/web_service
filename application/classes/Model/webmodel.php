@@ -43,7 +43,7 @@ class Model_Webmodel extends Model {
     }
 
     // Returns the hourly average 
-    public function getHourAverage() {
+    public function getHourAverage($device_id) {
 
         $results = DB::select()
                 ->from('view_hourly_average')
@@ -54,7 +54,7 @@ class Model_Webmodel extends Model {
     }
 
     // Returns the daily average 
-    public function getDailyAverage() {
+    public function getDailyAverage($device_id) {
 
         $results = DB::select()
                 ->from('view_day_hourly_average')
@@ -65,7 +65,7 @@ class Model_Webmodel extends Model {
     }
 
     // Return hours of day
-    public function getDailyBreakdown() {
+    public function getDailyBreakdown($device_id) {
         $results = DB::select()
                 ->from(self::$view2)
                 ->execute()
@@ -74,7 +74,7 @@ class Model_Webmodel extends Model {
     }
 
     // Return days of week
-    public function getWeeklyBreakdown() {
+    public function getWeeklyBreakdown($device_id) {
         $results = DB::select()
                 ->from(self::$view3)
                 ->execute()
@@ -83,7 +83,7 @@ class Model_Webmodel extends Model {
     }
 
     // Return weeks of month
-    public function getMonthlyBreakdown() {
+    public function getMonthlyBreakdown($device_id) {
         $results = DB::select()
                 ->from(self::$view4)
                 ->execute()
@@ -92,7 +92,7 @@ class Model_Webmodel extends Model {
     }
     
     // Return all records
-    public function getRecord() {
+    public function getRecord($device_id) {
         $results = DB::select()
                 ->from(self::$record)
                 ->execute()
@@ -102,7 +102,7 @@ class Model_Webmodel extends Model {
 
       
     // Return day records
-    public function getDayRecord() {
+    public function getDayRecord($device_id) {
         $results = DB::select()
                 ->from(self::$day_record)
                 ->execute()
@@ -111,7 +111,7 @@ class Model_Webmodel extends Model {
     }
     
     // Returns the current reading
-    public function getCurrent() {
+    public function getCurrent($device_id) {
 
         $results = DB::select()
                 ->from('view_current_data')
@@ -122,7 +122,7 @@ class Model_Webmodel extends Model {
     }
 
     // Returns the current reading
-    public function getOverallAverage() {
+    public function getOverallAverage($device_id) {
 
         $results = DB::select()
                 ->from('view_overall_average')
@@ -133,7 +133,7 @@ class Model_Webmodel extends Model {
     }
 
     // Returns the percentage change
-    public function getPercentageDifference() {
+    public function getPercentageDifference($device_id) {
         $results = DB::select('percentage_difference')
                 ->from(self::$view1)
                 ->execute()
@@ -153,11 +153,30 @@ class Model_Webmodel extends Model {
         return 'NULL';
     }
 
-    // Save data to database
-    public static function save($temp, $humid) {
+    private function getDeviceByCode($deviceCode){
+        $value = DB::select('id')
+                ->from('webservice_devices')
+                ->where('device_id', '=', $deviceCode)
+                ->execute()
+                ->as_array();
+        
+        if (!empty($value) && isset($value[0]))
+        {
+            return $value[0];
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
-        $results = DB::insert('webservice_temperature', array('date', 'temperature', 'humidity'))
-                ->values(array(DB::expr('NOW()'), $temp, $humid))
+    // Save data to database
+    public static function save($temp, $humid, $device) {
+            
+        $device = $this->getDeviceByCode($device);
+        
+        $results = DB::insert('webservice_temperature', array('device_id', 'date', 'temperature', 'humidity'))
+                ->values(array(DB::expr($device,'NOW()'), $temp, $humid))
                 ->execute();
     }
 

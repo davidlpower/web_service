@@ -21,7 +21,7 @@ class Controller_Admin extends Controller {
         if ($result == TRUE)
         {
             echo 'Registered';
-            $service->save($temperature, $humidity);
+            $service->save($temperature, $humidity, $device);
         }
         else
         {

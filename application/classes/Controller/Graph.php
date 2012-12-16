@@ -18,6 +18,7 @@ class Controller_Graph extends Controller {
 
     // Daily
     public function action_daily() {
+        
         $db_model = new Model_Webmodel();
         $data = $db_model->getDailyBreakdown();
 
