@@ -40,6 +40,8 @@
             console.log('working...');
             _href = _href.slice(0, -1)
             $(this).attr("href", _href + device_id);
+            }else{
+                console.log('not working....');
             }
         });
 
