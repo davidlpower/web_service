@@ -5,7 +5,7 @@
         <title>
             Current Sitting Room Data
         </title>
-        <script type="text/javascript" src="<?php echo '/assets/jquery-1.8.3.js'; ?>"></script>
+        <script type="text/javascript" src="/assets/jquery-1.8.3.js"></script>
     </head>
     <body style="font-family: Arial;border: 0 none;">
         <div id="container" style="width: 900px; margin: 0 auto;">
@@ -26,9 +26,7 @@
             </ul>
         </div>
     </body>
-</html>
-
-<script>
+    <script>
 $('.device').change(function() {
     var device_id = this.val();
     $('body a').each(function(){
@@ -36,3 +34,4 @@ $('.device').change(function() {
     })
 });
 </script>
+</html>
