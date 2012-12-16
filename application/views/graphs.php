@@ -36,19 +36,12 @@
         $('a').each(function() {
             var _href = $(this).attr("href"); 
            
-            var test = _href.length;
-            
-            console.log(_href.substr(_href.length-1));
+            var test = _href.substr(_href.length-1);
             
             if($.isNumeric(test))
             {
-                
-            console.log('working...');
-            
             _href = _href.slice(0, -1)
-            
             $(this).attr("href", _href + device_id);
-            
             }
         });
 
