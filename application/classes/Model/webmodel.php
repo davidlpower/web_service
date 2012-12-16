@@ -11,17 +11,16 @@ class Model_Webmodel extends Model {
     public static $record = "view_record";
     public static $day_record = "view_day_record";
     public static $devices = "view_devices";
-    
-    public function list_devices(){
-         $results = DB::select()
+
+    public function list_devices() {
+        $results = DB::select()
                 ->from(self::$devices)
                 ->execute()
                 ->as_array();
 
         return $results;
-        
     }
-    
+
     public function getDevice($device_id) {
 
         $results = DB::select()
@@ -90,7 +89,7 @@ class Model_Webmodel extends Model {
                 ->as_array();
         return $results;
     }
-    
+
     // Return all records
     public function getRecord($device_id) {
         $results = DB::select()
@@ -100,7 +99,6 @@ class Model_Webmodel extends Model {
         return $results;
     }
 
-      
     // Return day records
     public function getDayRecord($device_id) {
         $results = DB::select()
@@ -109,7 +107,7 @@ class Model_Webmodel extends Model {
                 ->as_array();
         return $results;
     }
-    
+
     // Returns the current reading
     public function getCurrent($device_id) {
 
@@ -153,7 +151,7 @@ class Model_Webmodel extends Model {
         return 'NULL';
     }
 
-    public static function getDeviceByCode($deviceCode){
+    public static function getDeviceByCode($deviceCode) {
         $value = DB::select('id')
                 ->from('webservice_devices')
                 ->where('device_id', '=', $deviceCode)
@@ -172,11 +170,11 @@ class Model_Webmodel extends Model {
 
     // Save data to database
     public static function save($temp, $humid, $device) {
-            
-        $device = $this->getDeviceByCode($device);
-        
-        $results = DB::insert('webservice_temperature', array('device_id', 'date', 'temperature', 'humidity'))
-                ->values(array(DB::expr($device,'NOW()'), $temp, $humid))
+
+        $device = self::getDeviceByCode($device);
+
+        DB::insert('webservice_temperature', array('device_id', 'date', 'temperature', 'humidity'))
+                ->values(array(DB::expr($device, 'NOW()'), $temp, $humid))
                 ->execute();
     }
 
