@@ -30,6 +30,9 @@
 
 <script>
 $('.device').change(function() {
-    console.log($('body a').val());
+    var device_id = this.val();
+    $('body a').each(function(){
+        console.log(this)
+    })
 });
 </script>
