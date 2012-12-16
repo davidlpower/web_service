@@ -158,6 +158,8 @@ class Model_Webmodel extends Model {
                 ->execute()
                 ->as_array();
 
+        print_r($value);
+        
         if (!empty($value) && isset($value[0]))
         {
             return $value[0];
@@ -170,8 +172,6 @@ class Model_Webmodel extends Model {
 
     // Save data to database
     public static function save($temp, $humid, $device) {
-
-        print_r($temp);
         
         $device = self::getDeviceByCode($device);
 
