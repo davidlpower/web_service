@@ -9,7 +9,7 @@
     <body style="font-family: Arial;border: 0 none;">
         <div id="container" style="width: 900px; margin: 0 auto;">
             <div id="table_title"><h1>List of Graphs</h1></div>
-            <select id="device" name="device">
+            Select Device: <select id="device" name="device">
                 <?php 
                 foreach($device as $key => $value){
                     echo '<option value="'.$value['id'].'">'.$value['nickname'].'</option>';
