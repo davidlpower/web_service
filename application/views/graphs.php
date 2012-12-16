@@ -37,7 +37,8 @@
             var _href = $(this).attr("href"); 
             var test = _href.slice(0, - 1);
             if($.isNumeric(test)){
-            console.log();
+            console.log('working...');
+            _href = _href.slice(0, -1)
             $(this).attr("href", _href + device_id);
             }
         });
