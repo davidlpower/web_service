@@ -30,6 +30,27 @@
 </html>
 
 <script>
+
+    initalise();
+
+    function initalise(){
+        var device_id = $(this).val();
+        
+        $('a').each(function() {
+            var _href = $(this).attr("href"); 
+            var test = _href.substr(_href.length-1);
+            if($.isNumeric(test))
+            {
+                _href = _href.slice(0, -1)
+                $(this).attr("href", _href + device_id);
+            }
+            else
+            {
+                $(this).attr("href", _href + device_id); 
+            }
+        });
+    }
+
     $('#device').change(function() {
         var device_id = $(this).val();
         
@@ -46,6 +67,5 @@
                 $(this).attr("href", _href + device_id); 
             }
         });
-
     });
 </script>
