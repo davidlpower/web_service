@@ -33,11 +33,13 @@
     $('#device').change(function() {
         var device_id = $(this).val();
         
-        $("a").each(function() {
+        $('a').each(function() {
             var _href = $(this).attr("href"); 
             var test = _href.slice(0, - 1);
-            console.log(test);
+            if($.isNumeric(test)){
+            console.log();
             $(this).attr("href", _href + device_id);
+            }
         });
 
     });
