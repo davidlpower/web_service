@@ -153,7 +153,7 @@ class Model_Webmodel extends Model {
         return 'NULL';
     }
 
-    private function getDeviceByCode($deviceCode){
+    public static function getDeviceByCode($deviceCode){
         $value = DB::select('id')
                 ->from('webservice_devices')
                 ->where('device_id', '=', $deviceCode)
