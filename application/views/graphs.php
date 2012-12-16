@@ -37,6 +37,7 @@
             var _href = $(this).attr("href"); 
            
             var test = _href.substr(_href.length-1);
+            console.log(test);
             console.log($.isNumeric(test));
               
             if($.isNumeric(test))
