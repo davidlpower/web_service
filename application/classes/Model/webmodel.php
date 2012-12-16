@@ -10,6 +10,17 @@ class Model_Webmodel extends Model {
     public static $view4 = "view_month_breakdown";
     public static $record = "view_record";
     public static $day_record = "view_day_record";
+    public static $devices = "view_devices";
+    
+    public function list_devices(){
+         $results = DB::select()
+                ->from(self::$devices)
+                ->execute()
+                ->as_array();
+
+        return $results;
+        
+    }
     
     public function getDevice($device_id) {
 

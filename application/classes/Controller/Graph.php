@@ -6,7 +6,13 @@ class Controller_Graph extends Controller {
 
     public function action_index() {
 
-        $view = View::factory('graphs');
+        // Get the list of devices
+        $services_model = new Model_Webmodel();
+        $device = $services_model->list_devices();
+        
+        $view = View::factory('graphs')
+                ->set('device', $device);
+        
         echo $view->render();
     }
 
