@@ -31,7 +31,10 @@
 
 <script>
 
-    initalise();
+$(document).ready(function() {
+  initalise();
+});
+    
 
     function initalise(){
         var device_id = $(this).val();
