@@ -30,15 +30,10 @@
 </html>
 
 <script>
-    
-
-        
-        $('#device').change(function() {
-            var device_id = this.val();
-            $('body a').each(function(){
-                console.log(this)
-            })
-        });
-    
-
+    $('#device').change(function() {
+        var device_id = this.val();
+        $('body a').each(function(data){
+            console.log(data);
+        })
+    });
 </script>
